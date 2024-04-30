@@ -12,7 +12,7 @@ function select($query)
         $rows[] = $row;
     }
     return $result;
-    // $data_barang = select("SELECT * FROM barang");
+    
   }
 
 
