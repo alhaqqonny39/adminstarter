@@ -3,7 +3,7 @@
     <div class="container mt-5">
       <h1>Data Produk Unit Produksi SMK Negeri 1 Bangsri</h1>
     <hr>
-    <button type="button" class="btn btn-primary">Tambah</button>
+    <button type="button" class="btn btn-primary" href="form-tambah.php">Tambah</button>
       <div>
       <table class="table table-bordered table-striped">
         <thead>
