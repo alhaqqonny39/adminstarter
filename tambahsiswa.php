@@ -20,7 +20,7 @@
     <div class="container mt-5">
       <h1>Tambah Data Siswa</h1>
     <hr>
-    <form action="" method="post">
+    <form action="" method="post" id="tambahsiswa">
       <div class="mb -3">
         <label for="nama" class="form-label">Nama Siswa</label>
         <input type="text" class="form-control" id="namasiswa" name="namasiswa" placeholder="Nama Siswa" required>
@@ -43,7 +43,13 @@
         </div>
 
         <input type="submit" class="btn btn-primary" style="float: right;" name="tambah">
+        <button type="button" class="btn btn-danger" style="float: right;" onclick="clearForm()">Reset</button>    
         </form>
+        <script>
+            function clearForm() {
+            document.getElementById("tambahsiswa").reset();
+                }
+        </script>
     </div>   
 
 <?php include 'layout/footer.php'; ?>

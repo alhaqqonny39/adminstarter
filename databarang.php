@@ -34,8 +34,8 @@ $data_barang = select("SELECT * FROM barang");
             <button type="button" class="btn btn-danger">Hapus</button>
             </td> -->
             <td width="15%" class="text-center">
-            <a href="ubahbarang.php?id=<?=$barang['idbarang'];?>" class="btn btn-warning">Edit</a>
-            <a href="hapusbarang.php?id=<?=$barang['idbarang'];?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus barang ini?')">Hapus</a>
+            <a href="ubahbarang.php?idbarang=<?=$barang['idbarang'];?>" class="btn btn-warning">Edit</a>
+            <a href="hapusbarang.php?idbarang=<?=$barang['idbarang'];?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus barang ini?')">Hapus</a>
 </td>
 
         </tr>

@@ -69,5 +69,24 @@ function select($query)
 
   return mysqli_affected_rows($db);
   }
+
+  //Fungsi ubah data siswa
+  function update_siswa($post){
+    global $db;
+    
+    $id = $post['nis'];
+    $nama = $post['namasiswa'];
+    $jk = $post['jeniskelamin'];
+    $alamat = $post['alamat'];
+    $ttl = $post['tanggallahir'];
+
+  //query ubah data
+  $query = "UPDATE siswa SET namasiswa = '$nama', jeniskelamin = '$jk', alamat = '$alamat' WHERE nis = $id";
+  mysqli_query($db, $query);
+
+  return mysqli_affected_rows($db);
+  }
+
+
   ?>
 

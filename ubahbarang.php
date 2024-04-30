@@ -3,6 +3,7 @@
   include 'layout/header.php';
     
   $id = (int)$_GET['idbarang'];
+  //query data barang berdasarkan id
   $barang = select("SELECT * FROM barang WHERE idbarang = $id")[0];
 
   //check apakah tombol ubah ditekan
@@ -37,7 +38,7 @@
       </div>
       <div class="mb -3">
         <label for="harga" class="form-label">Harga Barang</label> 
-        <input type="number" class="form-control" id="harga" name="harga" value="<?=$harga['harga'];?>" placeholder="Harga Barang" required>               
+        <input type="number" class="form-control" id="harga" name="harga" value="<?=$barang['harga'];?>" placeholder="Harga Barang" required>               
       </div>
         <button type="submit" class="btn btn-primary" style="float: right;" name="ubah">Ubah Data</button>
         </form>
