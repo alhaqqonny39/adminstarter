@@ -12,6 +12,7 @@ function select($query)
         $rows[] = $row;
     }
     return $result;
+    // $data_barang = select("SELECT * FROM barang");
   }
 
 
@@ -20,7 +21,7 @@ function select($query)
 
     global $db;
 
-    $nama = $post['nama'];
+    $nama = $post['namabarang'];
     $jumlah = $post['jumlah'];
     $harga = $post['harga'];
     

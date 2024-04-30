@@ -1,9 +1,11 @@
-<?php include "layout/header.php"; ?>
+<?php include "layout/header.php";
+
+?>
 
     <div class="container mt-5">
       <h1>Data Produk Unit Produksi SMK Negeri 1 Bangsri</h1>
     <hr>
-    <button type="button" class="btn btn-primary" href="form-tambah.php">Tambah</button>
+    <button type="button" class="btn btn-primary" href="tambahbarang.php">Tambah</button>
       <div>
       <table class="table table-bordered table-striped">
         <thead>
@@ -27,8 +29,9 @@
             <td><?=$barang['jumlah'];?></td>
             <td>Rp. <?= number_format($barang['harga'],0,',','.');?> </td>
             <td><?=date("d/m/Y | H:i:s", strtotime($barang['tanggal']));?></td>
-            <td width="15%" class="text-center"><button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-danger">Hapus</button></td>
+            <td width="15%" class="text-center">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-danger">Hapus</button></td>
         </tr>
 
         <?php endforeach; ?>

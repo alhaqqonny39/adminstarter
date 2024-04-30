@@ -2,9 +2,6 @@
 
 include "config/app.php";
 
-
-
-  $data_barang = select("SELECT * FROM barang");
 ?>
 
 <!doctype html>

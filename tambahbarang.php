@@ -16,8 +16,6 @@
     }
   }
   ?>
-    
-
     <div class="container mt-5">
       <h1>Tambah Data Barang</h1>
     <hr>
