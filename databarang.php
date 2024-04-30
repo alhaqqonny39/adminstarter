@@ -1,12 +1,12 @@
-<?php include "layout/header.php";
+<?php include 'layout/header.php';
+
 $data_barang = select("SELECT * FROM barang");
 ?>
 
     <div class="container mt-5">
       <h1>Data Produk Unit Produksi SMK Negeri 1 Bangsri</h1>
     <hr>
-    <button type="button" class="btn btn-primary" href="tambahbarang.php">Tambah</button>
-      <div>
+    <a href="tambahbarang.php" class="btn btn-primary mb-3">Tambah Barang</a>
       <table class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -29,14 +29,19 @@ $data_barang = select("SELECT * FROM barang");
             <td><?=$barang['jumlah'];?></td>
             <td>Rp. <?= number_format($barang['harga'],0,',','.');?> </td>
             <td><?=date("d/m/Y | H:i:s", strtotime($barang['tanggal']));?></td>
+            <!-- <td width="15%" class="text-center">
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-danger">Hapus</button>
+            </td> -->
             <td width="15%" class="text-center">
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Hapus</button></td>
+            <a href="ubahbarang.php?id=<?=$barang['idbarang'];?>" class="btn btn-warning">Edit</a>
+            <a href="hapusbarang.php?id=<?=$barang['idbarang'];?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus barang ini?')">Hapus</a>
+</td>
+
         </tr>
 
         <?php endforeach; ?>
         </tbody>
       </table>
-      </div>
       </div>        
-<?php include "layout/footer.php"; ?>  
+<?php include 'layout/footer.php'; ?>  

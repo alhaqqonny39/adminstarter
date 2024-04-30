@@ -1,5 +1,5 @@
 <?php
-  include "layout/header.php";
+  include 'layout/header.php';
   $data_barang = select("SELECT * FROM barang");
   ?>
       <!-- Optional JavaScript; choose one of the two! -->
@@ -39,5 +39,5 @@
       </div>
       </div>        
     <?php
-    include "layout/footer.php";
+    include 'layout/footer.php';
     ?>

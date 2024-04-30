@@ -1,6 +1,6 @@
 <?php
 
-include "config/app.php";
+include 'config/app.php';
 
 ?>
 
