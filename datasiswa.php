@@ -34,15 +34,7 @@
             <a href="ubahsiswa.php?nis=<?=$siswa['nis'];?>" type="button" class="btn btn-primary">Edit</a>
             <a href="hapussiswa.php?nis=<?=$siswa['nis'];?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data siswa ini?')">Hapus</a>
         </tr>
-        <!-- <tr>
-            <td>T002</td>
-            <td>Dudukan Senjata</td>
-            <td>5</td>
-            <td>100000</td>
-            <td>29/04/2024</td>
-            <td width="15%" class="text-center"><button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-danger">Hapus</button></td>
-        </tr> -->
+      
         <?php endforeach; ?>
         </tbody>
       </table>
