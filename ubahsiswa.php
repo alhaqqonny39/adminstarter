@@ -22,25 +22,40 @@
     }
   }
   ?>
-    <div class="container mt-5">
-      <h1>Ubah Data Siswa</h1>
+     <div class="container mt-5">
+      <h1>Tambah Data Siswa</h1>
     <hr>
-    <form action="" method="post">
-        <input type="hidden" name="nis" value="<?=$siswa['nis'];?>">
+    <form action="" method="post" id="ubahsiswa">
+    <input type="hidden" name="idbarang" value="<?=$siswa['nis'];?>">
       <div class="mb -3">
         <label for="nama" class="form-label">Nama Siswa</label>
         <input type="text" class="form-control" id="namasiswa" name="namasiswa" value="<?=$siswa['namasiswa'];?>" placeholder="Nama Siswa" required>
       </div>
       <div class="mb -3">
-        <label for="jumlah" class="form-label">Jenis Kelamin</label>
-        <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?=$barang['jumlah'];?>" placeholder="Jumlah Barang" required>
+      <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>  
+      <select class="form-select" id="jeniskelamin" name="jeniskelamin">
+            <option selected>Pilih salah satu</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
+        </select>
       </div>
       <div class="mb -3">
-        <label for="harga" class="form-label">Harga Barang</label> 
-        <input type="number" class="form-control" id="harga" name="harga" value="<?=$harga['harga'];?>" placeholder="Harga Barang" required>               
+        <label for="alamat">Alamat</label> 
+        <textarea class="form-control" placeholder="Alamat lengkap" id="alamat" name="alamat" value="<?=$siswa['namasiswa'];?>"></textarea>               
       </div>
-        <button type="submit" class="btn btn-primary" style="float: right;" name="ubah">Ubah Data</button>
+      <div class="form-group mb-3">
+        <label for="tanggal">Tanggal Lahir :</label>
+        <input type="date" class="form-control" id="tanggallahir" name="tanggallahir" value="<?=$siswa['tanggallahir'];?>">
+        </div>
+
+        <input type="submit" class="btn btn-primary" style="float: right;" name="ubah">
+        <button type="button" class="btn btn-danger" style="float: right;" onclick="clearForm()">Reset</button>    
         </form>
+        <script>
+            function clearForm() {
+            document.getElementById("tambahsiswa").reset();
+                }
+        </script>
     </div>   
 
 <?php include 'layout/footer.php'; ?>
