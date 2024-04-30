@@ -34,14 +34,14 @@
       <div class="mb -3">
       <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>  
       <select class="form-select" id="jeniskelamin" name="jeniskelamin">
-            <option selected>Pilih salah satu</option>
+            <option selected value="<?=$siswa['jeniskelamin'];?>">Pilih salah satu</option>
             <option value="L">Laki-laki</option>
             <option value="P">Perempuan</option>
         </select>
       </div>
       <div class="mb -3">
         <label for="alamat">Alamat</label> 
-        <textarea class="form-control" placeholder="Alamat lengkap" id="alamat" name="alamat" value="<?=$siswa['namasiswa'];?>"></textarea>               
+        <textarea class="form-control" placeholder="Alamat lengkap" id="alamat" name="alamat" value="<?=$siswa['alamat'];?>"></textarea>               
       </div>
       <div class="form-group mb-3">
         <label for="tanggal">Tanggal Lahir :</label>

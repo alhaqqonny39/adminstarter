@@ -87,6 +87,16 @@ function select($query)
   return mysqli_affected_rows($db);
   }
 
+  //fungsi hapus barang
+  function delete_barang($id){
+    global $db;
 
+    //query hapus data
+    $query = "DELETE FROM barang WHERE idbarang = $id";
+    
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+  }
   ?>
 
