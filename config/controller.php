@@ -1,7 +1,6 @@
 <?php 
 
   include 'database.php';
-
   
 //Fungsi untuk menampilkan (hanya read)
 function select($query)
@@ -74,29 +73,30 @@ function select($query)
   function update_siswa($post){
     global $db;
     
-    $id = $post['nis'];
+    $nis = $post['nis'];
     $nama = $post['namasiswa'];
     $jk = $post['jeniskelamin'];
     $alamat = $post['alamat'];
     $ttl = $post['tanggallahir'];
 
   //query ubah data
-  $query = "UPDATE siswa SET namasiswa = '$nama', jeniskelamin = '$jk', alamat = '$alamat' WHERE nis = $id";
+  $query = "UPDATE siswa SET namasiswa = '$nama', jeniskelamin = '$jk', alamat = '$alamat' WHERE nis = $nis";
   mysqli_query($db, $query);
 
   return mysqli_affected_rows($db);
   }
 
   //fungsi hapus barang
-  function delete_barang($id){
+    function delete_barang($id){
     global $db;
 
     //query hapus data
-    $query = "DELETE FROM barang WHERE idbarang = $id";
+    $query = "DELETE FROM barang WHERE idbarang=$id";
     
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
   }
+
   ?>
 

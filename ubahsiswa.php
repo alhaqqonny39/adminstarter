@@ -2,8 +2,8 @@
 
   include 'layout/header.php';
     
-  $id = (int)$_GET['nis'];
-  $siswa = select("SELECT * FROM siswa WHERE nis = $id")[0];
+  $nis = (int)$_GET['nis'];
+  $siswa = select("SELECT * FROM siswa WHERE nis = $nis")[0];
 
   //check apakah tombol ubah ditekan
   if(isset($_POST['ubah'])){
@@ -23,10 +23,10 @@
   }
   ?>
      <div class="container mt-5">
-      <h1>Tambah Data Siswa</h1>
+      <h1>Ubah Data Siswa</h1>
     <hr>
-    <form action="" method="post" id="ubahsiswa">
-    <input type="hidden" name="idbarang" value="<?=$siswa['nis'];?>">
+    <form action="" method="post">
+    <input type="hidden" name="nis" value="<?=$siswa['nis'];?>">
       <div class="mb -3">
         <label for="nama" class="form-label">Nama Siswa</label>
         <input type="text" class="form-control" id="namasiswa" name="namasiswa" value="<?=$siswa['namasiswa'];?>" placeholder="Nama Siswa" required>
@@ -48,14 +48,8 @@
         <input type="date" class="form-control" id="tanggallahir" name="tanggallahir" value="<?=$siswa['tanggallahir'];?>">
         </div>
 
-        <input type="submit" class="btn btn-primary" style="float: right;" name="ubah">
-        <button type="button" class="btn btn-danger" style="float: right;" onclick="clearForm()">Reset</button>    
+        <input type="submit" class="btn btn-primary" style="float: right;" name="ubah">    
         </form>
-        <script>
-            function clearForm() {
-            document.getElementById("tambahsiswa").reset();
-                }
-        </script>
     </div>   
 
 <?php include 'layout/footer.php'; ?>
