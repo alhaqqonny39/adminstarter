@@ -32,7 +32,7 @@
             <td><?=date("d/m/Y", strtotime($siswa['tanggallahir']));?></td>
             <td width="15%" class="text-center">
             <a href="ubahsiswa.php?nis=<?=$siswa['nis'];?>" type="button" class="btn btn-primary">Edit</a>
-            <a href="hapusbarang.php?nis=<?=$siswa['nis'];?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus barang ini?')">Hapus</a>
+            <a href="hapussiswa.php?nis=<?=$siswa['nis'];?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data siswa ini?')">Hapus</a>
         </tr>
         <!-- <tr>
             <td>T002</td>

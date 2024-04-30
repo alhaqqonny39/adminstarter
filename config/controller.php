@@ -98,5 +98,16 @@ function select($query)
     return mysqli_affected_rows($db);
   }
 
+  //fungsi hapus siswa
+  function delete_siswa($id){
+    global $db;
+
+    //query hapus data
+    $query = "DELETE FROM siswa WHERE nis=$id";
+    
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+  }
   ?>
 
