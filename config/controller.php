@@ -109,5 +109,10 @@ function select($query)
 
     return mysqli_affected_rows($db);
   }
+
+  //query untuk detail siswa
+
+  
   ?>
+
 
