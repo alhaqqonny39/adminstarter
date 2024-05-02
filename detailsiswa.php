@@ -91,10 +91,12 @@
         </tr>
         <tr>
             <td>Foto</td>
-            <td><img src="assets/img/gojo.png" alt="gojo" width="30%">
+            <td><a href="assets/img/<?=$data_siswa['foto'];?>"><img src="assets/img/<?=$data_siswa['foto'];?>" alt="foto" width="50%">
+                </a>
             </td>
         </tr>
       </table>
+      <a href="datasiswa.php" class="btn btn-secondary" style="float:left">Kembali</a>
       </div>        
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

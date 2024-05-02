@@ -89,6 +89,5 @@
             <td>Foto Barang</td>
             <td><img src="" alt=""></td>
         </tr>
-        <?php endforeach; ?>
         </tbody>
       </table>

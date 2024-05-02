@@ -47,6 +47,11 @@
         <label for="tanggal">Tanggal Lahir :</label>
         <input type="date" class="form-control" id="tanggallahir" name="tanggallahir" value="<?=$siswa['tanggallahir'];?>">
         </div>
+      
+      <div class="form-group mb-3">
+        <label for="foto">Foto :</label>
+        <input class="form-control" id="foto" name="foto" value="<?=$siswa['foto'];?>">
+      </div>
 
         <input type="submit" class="btn btn-primary" style="float: right;" name="ubah">    
         </form>

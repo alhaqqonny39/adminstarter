@@ -44,9 +44,13 @@ function select($query)
     $jk = $post['jeniskelamin'];
     $alamat = $post['alamat'];
     $ttl = $post['tanggallahir'];
-    
+    $foto = upload_file();
+    //memeriksa upload file
+    if(!$foto){
+      return false;
+    }
     //query tambah data
-    $query = "INSERT INTO siswa VALUES (null,'$nama','$jk','$alamat','$ttl')";
+    $query = "INSERT INTO siswa VALUES (null,'$nama','$jk','$alamat','$ttl','$foto')";
     mysqli_query($db, $query);
     
     return mysqli_affected_rows($db);
@@ -110,7 +114,50 @@ function select($query)
     return mysqli_affected_rows($db);
   }
 
-  //query untuk detail siswa
+  //fungsi upload foto
+  function upload_file()
+  {
+    $namaFile   = $_FILES['foto']['name'];
+    $ukuranFile = $_FILES['foto']['size'];
+    $error      = $_FILES['foto']['error'];
+    $tmpName    = $_FILES['foto']['tmp_name'];
+
+    // check file yang diupload
+    $extensifileValid = ['jpg', 'jpeg', 'png'];
+    $extensifile      = explode('.', $namaFile);
+    $extensifile      = strtolower(end($extensifile));
+
+    // check format/extensi file
+    if (!in_array($extensifile, $extensifileValid)) {
+
+        // pesan gagal
+        echo "<script>
+                alert('Format File Tidak Valid');
+                document.location.href = 'tambahsiswa.php';
+              </script>";
+        die();
+    }
+
+    // check ukuran file 20 mb
+    if ($ukuranFile > 20048000) {
+
+        // pesan gagal
+        echo "<script>
+                alert('Ukuran File Max 2 MB');
+                document.location.href = 'tambahsiswa.php';
+              </script>";
+        die();
+    }
+
+    // generate nama file baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $extensifile;
+
+    // pindahkan ke folder local 
+    move_uploaded_file($tmpName, 'assets/img/' . $namaFileBaru);
+    return $namaFileBaru;
+  }
 
   
   ?>

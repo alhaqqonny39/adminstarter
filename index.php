@@ -17,7 +17,6 @@
             <th>Jumlah Barang</th>
             <th>Harga Barang</th>
             <th>Tanggal</th>
-            <th>Aksi</th>
         </tr>
         </thead>
         <tbody>
@@ -30,8 +29,6 @@
             <td><?=$barang['jumlah'];?></td>
             <td>Rp. <?= number_format($barang['harga'],0,',','.');?> </td>
             <td><?=date("d/m/Y | H:i:s", strtotime($barang['tanggal']));?></td>
-            <td width="15%" class="text-center"><button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-danger">Hapus</button></td>
         </tr>
         <?php endforeach; ?>
         </tbody>
