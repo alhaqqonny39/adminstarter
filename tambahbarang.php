@@ -33,6 +33,10 @@
         <label for="harga" class="form-label">Harga Barang</label> 
         <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga Barang" required>               
       </div>
+      <div class="form-group mb-3">
+        <label for="foto" class="form-label">Foto Barang:</label>
+        <input type="file" class="form-control" name="fotobarang" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+      </div>
         <input type="submit" class="btn btn-primary" style="float: right;" name="tambah">
         <button type="button" class="btn btn-danger" style="float: right;" onclick="clearForm()">Hapus</button>
         </form>

@@ -1,6 +1,7 @@
 <?php 
 
   include 'layout/header.php';
+  
   if(isset($_POST['tambah'])){
     if(create_siswa($_POST)>0){
       echo "<script>

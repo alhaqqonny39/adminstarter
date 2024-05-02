@@ -56,6 +56,26 @@ function select($query)
     return mysqli_affected_rows($db);
     }
 
+    //Fungsi tambah akun
+  function create_akun($post){
+
+    global $db;
+    
+    $nama = $post['nama'];
+    $username = $post['username'];
+    $email = $post['email'];
+    $password1 = $post['password'];
+    $level = $post['level'];
+    
+    //enkripsi password
+    $password = password_hash($password1, PASSWORD_DEFAULT);
+
+    //query tambah data
+    $query = "INSERT INTO akun VALUES (null,'$nama','$username','$email','$password','$level')";
+    mysqli_query($db, $query);
+    
+    return mysqli_affected_rows($db);
+    }
 
   //Fungsi ubah data barang
     function update_barang($post){
@@ -108,6 +128,18 @@ function select($query)
 
     //query hapus data
     $query = "DELETE FROM siswa WHERE nis=$id";
+    
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+  }
+
+  //fungsi hapus akun
+  function delete_akun($id){
+    global $db;
+
+    //query hapus data
+    $query = "DELETE FROM akun WHERE idakun=$id";
     
     mysqli_query($db, $query);
 
