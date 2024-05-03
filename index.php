@@ -1,14 +1,19 @@
+
 <?php
+  
+  session_start();
   //membatasi halaman sebelum login
-  if(!isset($_SESSION["login"])){
-    echo "<sript>
-          alert('silakan login terlebih dahulu');
-          document.location.href = 'login.php';
-          </script";
+  if(!isset($_SESSION['login'])){
+    echo"<script>
+        alert('silakan login terlebih dahulu');
+        document.location.href = 'login.php';
+        </script>";
     exit;
   }
   
+
   include 'layout/header.php';
+
   $data_barang = select("SELECT * FROM barang");
   
   ?>

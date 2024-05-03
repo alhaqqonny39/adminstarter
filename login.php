@@ -1,3 +1,39 @@
+<?php
+session_start();
+include 'config/app.php';
+
+//cek apakah tombol login sudah ditekan
+if(isset($_POST['login'])){
+    //pengambilan username dan password
+    $username=mysqli_real_escape_string($db,$_POST['username']);
+    $password=mysqli_real_escape_string($db,$_POST['password']);
+
+//cek username
+$result=mysqli_query($db,"SELECT * FROM akun WHERE username='$username'");
+
+//jika ada usernya
+if(mysqli_num_rows($result)==1){
+
+    $hasil=mysqli_fetch_assoc($result);
+
+    // $count=mysqli_num_rows($result);
+    if(password_verify($password, $hasil['password'])){
+        //set session
+        $_SESSION['login']=true;
+        $_SESSION['idakun']=$hasil['idakun'];
+        $_SESSION['nama']=$hasil['nama'];
+        $_SESSION['username']=$hasil['username'];
+        $_SESSION['email']=$hasil['email'];
+        $_SESSION['level']=$hasil['level'];
+
+        //jika login benar akan diarahkan ke file index.php
+        header("Location:index.php");
+        exit;
+        }
+    }
+    $error=true;
+}
+?>
 
 <!doctype html>
 <html lang="en">
@@ -53,7 +89,12 @@
   <form action="" method="POST">
     <img class="mb-4" src="assets/img/login.png" alt="" width="40%" height="40%">
     <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
-
+    <?php
+        if(!isset($error)):?>
+    <div class="alert alert-danger">
+      <b>USERNAME DAN PASSWORD SALAH</b>
+    </div>
+    <?php endif; ?>
     <div class="form-floating">
       <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
       <label for="floatingInput">Username</label>
