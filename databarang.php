@@ -7,7 +7,7 @@ $data_barang = select("SELECT * FROM barang");
       <h1>Data Produk Unit Produksi SMK Negeri 1 Bangsri</h1>
     <hr>
     <a href="tambahbarang.php" class="btn btn-primary mb-3">Tambah Barang</a>
-      <table class="table table-bordered table-striped">
+      <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
             <th>No.</th>

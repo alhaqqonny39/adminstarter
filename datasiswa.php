@@ -8,7 +8,7 @@
       <h1>Data Siswa</h1>
     <hr>
     <a href="tambahsiswa.php" class="btn btn-primary mb-3">Tambah Siswa</a>
-      <table class="table table-bordered table-striped">
+      <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
             <th>No.</th>

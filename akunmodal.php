@@ -26,7 +26,7 @@
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modaltambah">
           Modal Tambah
           </button>
-          <table class="table table-bordered table-striped">
+          <table class="table table-bordered table-striped table-hover">
            <thead>
              <tr>
             <th>No.</th>
