@@ -35,6 +35,9 @@ include 'config/app.php';
         <li class="nav-item">
           <a class="nav-link" href="akunmodal.php">Data User</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Layanan
@@ -51,10 +54,10 @@ include 'config/app.php';
           </ul>
         </li>
       </ul>
-      <!-- <form class="d-flex">
+      <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
+      </form>
     </div>
   </div>
 </nav>
