@@ -17,7 +17,6 @@ function select($query)
     
   }
 
-
   //Fungsi untuk menambahkan data (create)
   function create_barang($post){
 
@@ -110,6 +109,28 @@ function select($query)
   return mysqli_affected_rows($db);
   }
 
+  //fungsi ubah akun
+  function update_akun($post){
+    global $db;
+    
+    $idakun = $post['idakun'];
+    $nama = $post['nama'];
+    $username = $post['username'];
+    $email = $post['email'];
+    $password2 = $post['password'];
+    $level = $post['level'];
+
+    //enkripsi password
+    $password = password_hash($password2, PASSWORD_DEFAULT);
+
+  //query ubah data
+  $query = "UPDATE akun SET nama = '$nama', username = '$username', email = '$email' , password = '$password', level = $level WHERE idakun = $idakun";
+  mysqli_query($db, $query);
+
+  return mysqli_affected_rows($db);
+  }
+
+
   //fungsi hapus barang
     function delete_barang($id){
     global $db;
@@ -126,6 +147,13 @@ function select($query)
   function delete_siswa($id){
     global $db;
 
+    //ambil foto sesuai data yang dipilih
+    $foto = select("SELECT * FROM siswa WHERE nis = $id")[0];
+    //$foto = $foto["foto"];
+
+    //hapus foto
+    unlink("assets/img/".$foto);
+
     //query hapus data
     $query = "DELETE FROM siswa WHERE nis=$id";
     
@@ -135,11 +163,11 @@ function select($query)
   }
 
   //fungsi hapus akun
-  function delete_akun($id){
+  function delete_akun($idakun){
     global $db;
 
     //query hapus data
-    $query = "DELETE FROM akun WHERE idakun=$id";
+    $query = "DELETE FROM akun WHERE idakun=$idakun";
     
     mysqli_query($db, $query);
 

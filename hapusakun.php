@@ -2,9 +2,9 @@
 
 include 'config/app.php';
 
-$id = (int)$_GET['idakun'];
+$idakun = (int)$_GET['idakun'];
 
-if(delete_akun($id) > 0){
+if(delete_akun($idakun) > 0){
     echo "<script>
             alert('Data Akun berhasil dihapus');
             document.location.href = 'akunmodal.php';

@@ -34,9 +34,9 @@
       <div class="mb -3">
       <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>  
       <select class="form-select" id="jeniskelamin" name="jeniskelamin">
-            <option selected value="<?=$siswa['jeniskelamin'];?>">Pilih salah satu</option>
-            <option value="L">Laki-laki</option>
-            <option value="P">Perempuan</option>
+            <?php $jk = $siswa['jeniskelamin'];?>
+            <option value="L" <?= $jk == 'L' ? 'selected' : null?>>Laki-laki</option>
+            <option value="P" <?= $jk == 'P' ? 'selected' : null?>>Perempuan</option>
         </select>
       </div>
       <div class="mb -3">
