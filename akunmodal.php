@@ -28,6 +28,14 @@
     }
   }
 
+  //membatasi halaman sesuai user login
+  if($_SESSION['level']!= 1){
+    echo"<script>
+        alert('Anda harus masuk sebagai admin akun');
+        document.location.href = 'login.php';
+        </script>";
+    exit;
+  }
 ?>
 
     <div class="container mt-5">

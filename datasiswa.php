@@ -9,6 +9,15 @@
      exit;
    }
  
+   //membatasi halaman sesuai user login
+   if($_SESSION['level']!= 2){
+    echo"<script>
+        alert('Anda harus masuk sebagai admin siswa');
+        document.location.href = 'login.php';
+        </script>";
+    exit;
+  }
+
   include 'layout/header.php';
   $data_siswa = select("SELECT * FROM siswa");
 ?>

@@ -8,6 +8,16 @@
        </script>";
    exit;
  }
+
+ //membatasi halaman sesuai user login
+ if($_SESSION['level']!= 3){
+  echo"<script>
+      alert('Anda harus masuk sebagai admin barang');
+      document.location.href = 'login.php';
+      </script>";
+  exit;
+}
+
 include 'layout/header.php';
 
 $data_barang = select("SELECT * FROM barang");
