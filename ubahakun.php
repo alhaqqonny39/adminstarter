@@ -30,7 +30,7 @@
         <input type="hidden" name="idakun" value="<?=$data_akun['idakun'];?>">
       <div class="mb -3">
         <label for="nama" class="form-label">Nama akun</label>
-        <input type="text" class="form-control" id="namaakun" name="namaakun" value="<?=$data_akun['nama'];?>" placeholder="Nama akun" required>
+        <input type="text" class="form-control" id="nama" name="nama" value="<?=$data_akun['nama'];?>" placeholder="Nama akun" required>
       </div>
       <div class="mb -3">
         <label for="username" class="form-label">Username</label>

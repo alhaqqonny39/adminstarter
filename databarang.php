@@ -20,7 +20,16 @@
 
 include 'layout/header.php';
 
-$data_barang = select("SELECT * FROM barang");
+//$data_barang = select("SELECT * FROM barang");
+//query tampil data dengan pagination
+$stokDataPerhalaman = 5;
+$stokData     = count(select("SELECT * FROM barang"));
+$stokHalaman  = ceil($stokData / $stokDataPerhalaman);
+$halamanAktif = (isset($_GET['halaman']) ? $_GET['halaman']:1);
+$awalData = ($stokDataPerhalaman * $halamanAktif) - $stokDataPerhalaman;
+
+$data_barang = select("SELECT * FROM barang ORDER BY idbarang DESC LIMIT $awalData, $stokDataPerhalaman");
+
 ?>
 
     <div class="container mt-5">
@@ -60,5 +69,36 @@ $data_barang = select("SELECT * FROM barang");
         <?php endforeach; ?>
         </tbody>
       </table>
-      </div>        
+      <div class="mt-2 justify-content-end d-flex">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <?php if ($halamanAktif > 1) : ?>
+            <li class="page-item">
+              <a class="page-link" href="?halaman=<?= $halamanAktif - 1 ?>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+          <?php endif; ?>
+
+          <?php for ($i = 1; $i <= $stokHalaman; $i++) : ?>
+            <?php if ($i == $halamanAktif) : ?>
+              <li class="page-item active"><a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a></li>
+            <?php else : ?>
+              <li class="page-item "><a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a></li>
+            <?php endif; ?>
+          <?php endfor; ?>
+
+          <?php if ($halamanAktif < $stokHalaman) : ?>
+            <li class="page-item">
+              <a class="page-link" href="?halaman=<?= $halamanAktif + 1 ?>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          <?php endif; ?>
+        </ul>
+      </nav>
+      </div>
+    </div>        
 <?php include 'layout/footer.php'; ?>  
