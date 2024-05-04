@@ -33,7 +33,9 @@ $data_siswa = select("SELECT * FROM siswa ORDER BY nis DESC LIMIT $awalData, $st
      <div class="container mt-5">
       <h1>Data Siswa</h1>
     <hr>
-    <a href="tambahsiswa.php" class="btn btn-primary mb-3">Tambah Siswa</a>
+    <a href="tambahsiswa.php" class="btn btn-primary mb-3"><i class="fas fa-plus-circle"></i>Tambah Siswa</a>
+    <a href="downloadexcelsiswa.php" class="btn btn-success mb-3"><i class="fas fa-file-excel"></i>Unduh Data Siswa</a>
+    <a href="downloadpdfsiswa.php" class="btn btn-dark mb-3"><i class="fas fa-file-pdf"></i>Unduh Data Siswa</a>
       <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
@@ -43,6 +45,7 @@ $data_siswa = select("SELECT * FROM siswa ORDER BY nis DESC LIMIT $awalData, $st
             <th>Jenis Kelamin</th>
             <th>Alamat</th>
             <th>Tanggal Lahir</th>
+            <th>Foto</th>
             <th>Aksi</th>
         </tr>
         </thead>
@@ -56,6 +59,7 @@ $data_siswa = select("SELECT * FROM siswa ORDER BY nis DESC LIMIT $awalData, $st
             <td><?=$siswa['jeniskelamin'];?></td>
             <td><?=$siswa['alamat'];?></td>
             <td><?=date("d/m/Y", strtotime($siswa['tanggallahir']));?></td>
+            <td><?=$siswa['foto'];?></td>
             <td width="20%" class="text-center">
             <a href="detailsiswa.php?nis=<?=$siswa['nis'];?>" type="button" class="btn btn-info">Detail</a>  
             <a href="ubahsiswa.php?nis=<?=$siswa['nis'];?>" type="button" class="btn btn-primary">Edit</a>

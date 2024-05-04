@@ -25,6 +25,7 @@ function select($query)
     $nama = $post['namabarang'];
     $jumlah = $post['jumlah'];
     $harga = $post['harga'];
+    $barcode = rand(100000,999999);
     
     //query tambah data
     $query = "INSERT INTO barang VALUES (null,'$nama','$jumlah','$harga',CURRENT_TIMESTAMP())";

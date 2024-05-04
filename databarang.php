@@ -35,8 +35,9 @@ $data_barang = select("SELECT * FROM barang ORDER BY idbarang DESC LIMIT $awalDa
     <div class="container mt-5">
       <h1>Data Produk Unit Produksi SMK Negeri 1 Bangsri</h1>
     <hr>
-    <a href="tambahbarang.php" class="btn btn-primary mb-3">Tambah Barang</a>
-      <table class="table table-bordered table-striped table-hover">
+    <a href="tambahbarang.php" class="btn btn-primary mb-3"><i class="fas fa-plus-circle"></i>Tambah Barang</a>
+    <a href="downloadpdfbarang.php" class="btn btn-dark mb-3"><i class="fas fa-file-pdf"></i>Unduh Data Barang</a>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
             <th>No.</th>
@@ -44,6 +45,7 @@ $data_barang = select("SELECT * FROM barang ORDER BY idbarang DESC LIMIT $awalDa
             <th>Nama Barang</th>
             <th>Jumlah Barang</th>
             <th>Harga Barang</th>
+            <th>Barcode</th>
             <th>Tanggal</th>
             <th>Aksi</th>
         </tr>

@@ -33,7 +33,8 @@
         </tr>
         <tr>
             <td>Foto Barang</td>
-            <td><img src="" alt=""></td>
+            <td><a href="assets/img/<?=$data_barang['foto'];?>"><img src="assets/img/<?=$data_barang['foto'];?>" alt="foto" width="50%">
+                </a></td>
         </tr>
         </tbody>
       </table>
