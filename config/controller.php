@@ -17,33 +17,30 @@ function select($query)
     
   }
 
-  //Fungsi untuk menambahkan data (create)
+  //Fungsi untuk menambahkan data barang (create)
   function create_barang($post){
-
     global $db;
 
-    $nama = $post['namabarang'];
-    $jumlah = $post['jumlah'];
-    $harga = $post['harga'];
-    $barcode = rand(100000,999999);
-    
+    $nama = strip_tags($post['namabarang']);
+    $jumlah = strip_tags($post['jumlah']);
+    $harga = strip_tags($post['harga']);
+    $barcode = strip_tags(rand(100000,999999));
+
     //query tambah data
     $query = "INSERT INTO barang VALUES (null,'$nama','$jumlah','$harga','$barcode',CURRENT_TIMESTAMP())";
     mysqli_query($db, $query);
-    
     return mysqli_affected_rows($db);
   }
 
 
   //Fungsi tambah siswa
   function create_siswa($post){
-
     global $db;
     
-    $nama = $post['namasiswa'];
-    $jk = $post['jeniskelamin'];
-    $alamat = $post['alamat'];
-    $ttl = $post['tanggallahir'];
+    $nama = strip_tags($post['namasiswa']);
+    $jk = strip_tags($post['jeniskelamin']);
+    $alamat = strip_tags($post['alamat']);
+    $ttl = strip_tags($post['tanggallahir']);
     $foto = upload_file();
     //memeriksa upload file
     if(!$foto){
@@ -61,11 +58,11 @@ function select($query)
 
     global $db;
     
-    $nama = $post['nama'];
-    $username = $post['username'];
-    $email = $post['email'];
-    $password1 = $post['password'];
-    $level = $post['level'];
+    $nama = strip_tags($post['nama']);
+    $username = strip_tags($post['username']);
+    $email = strip_tags($post['email']);
+    $password1 = strip_tags($post['password']);
+    $level = strip_tags($post['level']);
     
     //enkripsi password
     $password = password_hash($password1, PASSWORD_DEFAULT);

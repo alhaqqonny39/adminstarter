@@ -18,12 +18,10 @@ if(isset($_POST['login'])){
   if ($response->success) {
       // check username
       $result = mysqli_query($db, "SELECT * FROM akun WHERE username = '$username'");
-    
-//cek username
-$result=mysqli_query($db,"SELECT * FROM akun WHERE username='$username'");
+  
 
-//jika ada usernya
-if(mysqli_num_rows($result)==1){
+  //jika ada usernya
+  if(mysqli_num_rows($result)==1){
 
     $hasil=mysqli_fetch_assoc($result);
 
@@ -118,11 +116,11 @@ if(mysqli_num_rows($result)==1){
       <b>ReCaptcha tidak valid</b>
     </div>
     <?php endif; ?>
-    <div class="form-floating">
+    <div class="form-floating mb-2">
       <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
       <label for="floatingInput">Username</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb2">
       <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
@@ -140,7 +138,6 @@ if(mysqli_num_rows($result)==1){
     <p class="mt-5 mb-3 text-muted">&copy; UP SMK Negeri 1 Bangsri 2024</p>
   </form>
 </main>
-
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
