@@ -37,6 +37,7 @@ $data_barang = select("SELECT * FROM barang ORDER BY idbarang DESC LIMIT $awalDa
     <hr>
     <a href="tambahbarang.php" class="btn btn-primary mb-3"><i class="fas fa-plus-circle"></i>Tambah Barang</a>
     <a href="downloadpdfbarang.php" class="btn btn-dark mb-3"><i class="fas fa-file-pdf"></i>Unduh Data Barang</a>
+    <a href="cetak-barcode.php" class="btn btn-info mb-3"><i class="fas fa-plus-circle"></i>Cetak Barcode Barang</a>
     <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>

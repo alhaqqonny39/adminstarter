@@ -36,5 +36,9 @@
             <td><a href="assets/img/<?=$data_barang['foto'];?>"><img src="assets/img/<?=$data_barang['foto'];?>" alt="foto" width="50%">
                 </a></td>
         </tr>
+        <tr>
+            <td>Barcode</td>
+            <td><?=$data_barang['barcode'];?></td>
+        </tr>
         </tbody>
       </table>

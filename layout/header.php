@@ -33,7 +33,10 @@ include 'config/app.php';
           <a class="nav-link" href="datasiswa.php">Data Siswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="akunmodal.php">Data User</a>
+          <a class="nav-link" href="akunmodal.php">Data Akun</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="transaksi.php">Data Transaksi</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="logout.php">Logout</a>
