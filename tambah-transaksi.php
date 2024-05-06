@@ -175,7 +175,7 @@ if (isset($_POST['barcode'])) {
                     <?= '<strong>' . "Rp " . number_format($total, 0, ',', '.') . '</strong>'; ?>
                 </div>
             </div>
-            <button type="submit" name="tambah_transaksi" class="btn btn-primary">tambah transaksi</button>
+            <button type="submit" name="tambah_transaksi" class="btn btn-primary" <?=$total==0?'disabled':null?>>tambah transaksi</button>
             </form>
         </div><!-- /.container-fluid -->
     </section>
