@@ -28,7 +28,7 @@ function select($query)
     $barcode = rand(100000,999999);
     
     //query tambah data
-    $query = "INSERT INTO barang VALUES (null,'$nama','$jumlah','$harga',CURRENT_TIMESTAMP())";
+    $query = "INSERT INTO barang VALUES (null,'$nama','$jumlah','$harga','$barcode',CURRENT_TIMESTAMP())";
     mysqli_query($db, $query);
     
     return mysqli_affected_rows($db);

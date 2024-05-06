@@ -59,6 +59,7 @@ $data_barang = select("SELECT * FROM barang ORDER BY idbarang DESC LIMIT $awalDa
             <td><?=$barang['namabarang'];?></td>
             <td><?=$barang['jumlah'];?></td>
             <td>Rp. <?= number_format($barang['harga'],0,',','.');?> </td>
+            <td><img src="barcode.php?codetype=Code128&size15&text=<?= $barang['barcode']; ?>&print=true" alt="barcode"></td>
             <td><?=date("d/m/Y | H:i:s", strtotime($barang['tanggal']));?></td>
             <td width="20%" class="text-center">
             <a href="detailbarang.php?idbarang=<?=$barang['idbarang'];?>" class="btn btn-info">Detail</a>
