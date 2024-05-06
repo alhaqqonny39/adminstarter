@@ -22,6 +22,7 @@
                 <th>Jumlah Barang</th>
                 <th>Harga Barang</th>
                 <th>Tanggal</th>
+                <th>Barcode</th>
             </tr>';
 
     $no = 1;
@@ -32,7 +33,8 @@
                 <td>'.$barang['idbarang'].'</td>
                 <td>'.$barang['namabarang'].'</td>
                 <td>'.$barang['jumlah'].'</td>
-                <td>'.$barang['harga'].'</td>                
+                <td>'.$barang['harga'].'</td>
+                <td>'.$barang['barcode'].'</td>
             </tr>
         ';
     }
