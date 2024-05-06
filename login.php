@@ -8,6 +8,17 @@ if(isset($_POST['login'])){
     $username=mysqli_real_escape_string($db,$_POST['username']);
     $password=mysqli_real_escape_string($db,$_POST['password']);
 
+  // secret key
+  $secret_key = "6Lez9tEpAAAAAB7-5lFycIlrdj8lM-9sqx-TFACA";
+
+  $verifikasi = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $_POST['g-recaptcha-response']);
+
+  $response = json_decode($verifikasi);
+
+  if ($response->success) {
+      // check username
+      $result = mysqli_query($db, "SELECT * FROM akun WHERE username = '$username'");
+    
 //cek username
 $result=mysqli_query($db,"SELECT * FROM akun WHERE username='$username'");
 
@@ -30,8 +41,14 @@ if(mysqli_num_rows($result)==1){
         header("Location:index.php");
         exit;
         }
+    } else{
+      //jika username/password salah
+      $error=true;
     }
-    $error=true;
+  } else{
+    //jika recaptcha tidak valid
+    $errorRecaptcha = true;
+  }
 }
 ?>
 
@@ -90,9 +107,15 @@ if(mysqli_num_rows($result)==1){
     <img class="mb-4" src="assets/img/login.png" alt="" width="40%" height="40%">
     <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
     <?php
-        if(!isset($error)):?>
+        if(isset($error)):?>
     <div class="alert alert-danger">
       <b>USERNAME DAN PASSWORD SALAH</b>
+    </div>
+    <?php endif; ?>
+    <?php
+        if(isset($errorRecaptcha)):?>
+    <div class="alert alert-danger text-center">
+      <b>ReCaptcha tidak valid</b>
     </div>
     <?php endif; ?>
     <div class="form-floating">
@@ -103,7 +126,11 @@ if(mysqli_num_rows($result)==1){
       <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
+    <div class="mb-3">
+      <div class="g-recaptcha" data-sitekey="6Lez9tEpAAAAAKmLMqBrEIQMzB6nFnXS-6H18MA1">
 
+      </div>
+    </div>
     <!-- <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Ingat saya
@@ -115,6 +142,6 @@ if(mysqli_num_rows($result)==1){
 </main>
 
 
-    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>
